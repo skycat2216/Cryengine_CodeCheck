@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\CryTPS\My Project2\Code\StdAfx.cpp" />
+    <ClCompile Include="E:\CryTPS\My Project2\solutions\win64\Code_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\CryTPS\My Project2\solutions\win64\Components_uber.cpp">
+      <Filter>UBER FILES</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\CryTPS\My Project2\Code\GamePlugin.cpp" />
+    <ClInclude Include="E:\CryTPS\My Project2\Code\GamePlugin.h" />
+    <ClInclude Include="E:\CryTPS\My Project2\Code\StdAfx.h" />
+    <ClInclude Include="E:\CryTPS\My Project2\Code\Components\Player.cpp">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\CryTPS\My Project2\Code\Components\Player.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\CryTPS\My Project2\Code\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="E:\CryTPS\My Project2\solutions\win64\Game.autogen.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Components">
+      <UniqueIdentifier>{4EE27329-9D7D-31E0-9AC9-7DE348C2D0C7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{58362FEB-052E-3E70-BF53-6CC827EDE099}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UBER FILES">
+      <UniqueIdentifier>{668A8911-64BA-3584-BAD6-1F529658CCAB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

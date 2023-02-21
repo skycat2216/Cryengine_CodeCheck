@@ -1,0 +1,1 @@
+04:28:44 Bad camera passed to 3DEngine from CLevelEditorViewport::OnRender: Pos=(nan, nan, nan), Fov=1.0, MaxViewDist=0.0. Maybe the water level is too extreme.
