@@ -56,7 +56,7 @@ private:
 	Cry::DefaultComponents::CAdvancedAnimationComponent* m_pAdvancedAnimationComponent;
 
 	void InitializeInput();
-	void Playermovement();
+	void PlayerMovement();
 
 
 	float fMovementSpeed;
