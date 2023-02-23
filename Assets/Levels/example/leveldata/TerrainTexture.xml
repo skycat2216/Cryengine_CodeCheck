@@ -1,7 +1,5 @@
-<TerrainTexture TileCountX="1" TileCountY="1" TileResolution="64">
+<TerrainTexture TileCountX="0" TileCountY="0" TileResolution="0">
  <RGBLayer>
-  <Tiles>
-   <tile X="0" Y="0" Size="64"/>
-  </Tiles>
+  <Tiles />
  </RGBLayer>
 </TerrainTexture>

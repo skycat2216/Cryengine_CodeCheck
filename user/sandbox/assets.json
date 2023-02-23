@@ -5235,8 +5235,8 @@
 			"type": "Animation",
 			"guid": "a93a9d0d-8fa2-6ac2-c4ef-fb3ffca43c72",
 			"name": "idle_3p",
-			"timestamp": 1649169585,
-			"files": [ "Animations/motusAnims/idle_3p.caf" ],
+			"timestamp": 132936431858920000,
+			"files": [ "animations/motusanims/idle_3p.caf" ],
 			"workFiles": [ ],
 			"source": "",
 			"metadata": "Animations/motusAnims/idle_3p.caf.cryasset",
@@ -5523,8 +5523,8 @@
 			"type": "Animation",
 			"guid": "db0d89ae-71b4-6d2a-87b0-ffbcd9e3bd97",
 			"name": "jogcross_bck_rgt_3p",
-			"timestamp": 1649169588,
-			"files": [ "Animations/motusAnims/strafe/jogcross_bck_rgt_3p.caf" ],
+			"timestamp": 132936431880350000,
+			"files": [ "animations/motusanims/strafe/jogcross_bck_rgt_3p.caf" ],
 			"workFiles": [ ],
 			"source": "",
 			"metadata": "Animations/motusAnims/strafe/jogcross_bck_rgt_3p.caf.cryasset",
@@ -5619,8 +5619,8 @@
 			"type": "Animation",
 			"guid": "817d2acf-bf29-949f-8941-ca100cbac0ef",
 			"name": "runstrafe_rgt_3p",
-			"timestamp": 1649169589,
-			"files": [ "Animations/motusAnims/strafe/runstrafe_rgt_3p.caf" ],
+			"timestamp": 132936431892910000,
+			"files": [ "animations/motusanims/strafe/runstrafe_rgt_3p.caf" ],
 			"workFiles": [ ],
 			"source": "",
 			"metadata": "Animations/motusAnims/strafe/runstrafe_rgt_3p.caf.cryasset",
@@ -5809,9 +5809,9 @@
 		},
 		{
 			"type": "Level",
-			"guid": "90f6f9d4-0804-283c-02dc-2d438ba572bd",
+			"guid": "984fcd77-e594-2b34-fbf5-414a47e0d684",
 			"name": "example",
-			"timestamp": 1649169590,
+			"timestamp": 1649169564,
 			"files": [ "Levels/example/example.level" ],
 			"workFiles": [ ],
 			"source": "",
@@ -5873,7 +5873,15 @@
 					"usageCount": 0
 				},
 				{
+					"path": "%engine%/engineassets/objects/editorprimitive.mtl",
+					"usageCount": 0
+				},
+				{
 					"path": "%engine%/engineassets/objects/primitive_cube.cgf",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/objects/primitive_sphere.cgf",
 					"usageCount": 0
 				},
 				{
@@ -5898,6 +5906,14 @@
 				},
 				{
 					"path": "%engine%/engineassets/textures/defaults/16_grey.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/textures/perlinnoisederivatives.dds",
+					"usageCount": 0
+				},
+				{
+					"path": "%engine%/engineassets/textures/water_droplets.dds",
 					"usageCount": 0
 				},
 				{ "path": "%engine%/engineassets/textures/white.dds", "usageCount": 0 },
@@ -6104,17 +6120,29 @@
 				},
 				{ "path": "animations/motusanims/walk_bck_3p.caf", "usageCount": 0 },
 				{ "path": "animations/motusanims/walk_fwd_3p.caf", "usageCount": 0 },
+				{
+					"path": "e:/wsp/ce/main_stabilisation/code/gametemplates/cpp/firstpersonshooter/assets/levels/example/filelist.xml",
+					"usageCount": 0
+				},
 				{ "path": "engineassets/materials/sky/sky.mtl", "usageCount": 0 },
 				{
 					"path": "engineassets/materials/water/ocean_default.mtl",
 					"usageCount": 0
 				},
 				{ "path": "engineassets/texturemsg/defaultnouvs.dds", "usageCount": 0 },
+				{ "path": "engineassets/textures/grey.dds", "usageCount": 0 },
 				{
 					"path": "engineassets/textures/skys/night/half_moon.dds",
 					"usageCount": 0
 				},
+				{ "path": "engineassets/textures/white.dds", "usageCount": 0 },
 				{ "path": "libs/environmentpresets/example.xml", "usageCount": 0 },
+				{ "path": "materials/bullet.mtl", "usageCount": 0 },
+				{ "path": "materials/terrain.mtl", "usageCount": 0 },
+				{
+					"path": "objects/characters/samplecharacter/firstperson.cdf",
+					"usageCount": 0
+				},
 				{
 					"path": "objects/characters/samplecharacter/mcg_ddna.dds",
 					"usageCount": 0
@@ -6128,7 +6156,7 @@
 					"usageCount": 0
 				},
 				{
-					"path": "objects/characters/samplecharacter/motusbody.skin",
+					"path": "objects/characters/samplecharacter/motusbodyheadless.skin",
 					"usageCount": 0
 				},
 				{
@@ -6139,10 +6167,8 @@
 					"path": "objects/characters/samplecharacter/skelproxy.chr",
 					"usageCount": 0
 				},
-				{
-					"path": "objects/characters/samplecharacter/thirdperson.cdf",
-					"usageCount": 0
-				},
+				{ "path": "objects/default/editorprimitive.mtl", "usageCount": 0 },
+				{ "path": "objects/default/primitive_sphere.cgf", "usageCount": 0 },
 				{
 					"path": "objects/weapons/sampleweapon/defaultweapon.cgf",
 					"usageCount": 0
@@ -6151,6 +6177,7 @@
 					"path": "objects/weapons/sampleweapon/defaultweapon.mtl",
 					"usageCount": 0
 				},
+				{ "path": "scripts/ai/factions.xml", "usageCount": 0 },
 				{
 					"path": "textures/cubemaps/example/environmentprobe1_cm.dds",
 					"usageCount": 0
@@ -6163,9 +6190,9 @@
 		},
 		{
 			"type": "Xml",
-			"guid": "ae4b13f3-4538-6d5a-90fd-5c018c529664",
+			"guid": "d6cd39f2-ecfb-3bdf-24fc-3c1721b9c3e4",
 			"name": "filelist",
-			"timestamp": 1649169590,
+			"timestamp": 1649169564,
 			"files": [ "Levels/example/filelist.xml" ],
 			"workFiles": [ ],
 			"source": "",
@@ -6175,9 +6202,9 @@
 		},
 		{
 			"type": "Xml",
-			"guid": "5d430851-0b64-e3d9-eced-d92b883a03a9",
+			"guid": "46144c17-bab7-882a-d6ea-1e9436570ebb",
 			"name": "Environment",
-			"timestamp": 1649169590,
+			"timestamp": 1649169564,
 			"files": [ "Levels/example/leveldata/Environment.xml" ],
 			"workFiles": [ ],
 			"source": "",

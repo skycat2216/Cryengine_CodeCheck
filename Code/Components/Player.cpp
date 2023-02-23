@@ -7,10 +7,7 @@
 #include <CryCore/StaticInstanceList.h>
 #include <CrySchematyc/Env/IEnvRegistrar.h>
 
-#include <DefaultComponents/Cameras/CameraComponent.h>
-#include <DefaultComponents/Physics/CharacterControllerComponent.h>
-#include <DefaultComponents/Geometry/AdvancedAnimationComponent.h>
-#include <DefaultComponents/Input/InputComponent.h>
+
 
 namespace
 {
@@ -31,70 +28,54 @@ void CPlayerComponent::Initialize()
 	m_pInputComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CInputComponent>();
 	m_pCharacterController = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CCharacterControllerComponent>();
 	m_pAdvancedAnimationComponent = m_pEntity->GetOrCreateComponent<Cry::DefaultComponents::CAdvancedAnimationComponent>();
+}
+void CPlayerComponent::InitializeInput() 
+{
 
-
-	m_pInputComponent->RegisterAction("player", "moveforward", [this](int iActivatonMode, float fValue )
-	{
-			vec2MovementDelta.y = fValue; 
-	});
+	m_pInputComponent->RegisterAction("player", "moveforward", [this](int ActivatonMode, float value ){vec2MovementDelta.y = value; });
 	m_pInputComponent->BindAction("player", "moveforward", eAID_KeyboardMouse, eKI_W);
 
 
-	m_pInputComponent->RegisterAction("player", "movebackward", [this](int iActivatonMode, float fValue)
-	{
-			vec2MovementDelta.y = -fValue; 
-	});
+	m_pInputComponent->RegisterAction("player", "movebackward", [this](int activatonMode, float value){vec2MovementDelta.y = -value; });
 	m_pInputComponent->BindAction("player", "movebackward", eAID_KeyboardMouse, eKI_S);
 
 
-	m_pInputComponent->RegisterAction("player", "moveright", [this](int iActivatonMode, float fValue)
-	{
-			vec2MovementDelta.x = fValue; 
-	});
+	m_pInputComponent->RegisterAction("player", "moveright", [this](int activatonMode, float value){vec2MovementDelta.x = value; });
 	m_pInputComponent->BindAction("player", "moveright", eAID_KeyboardMouse, eKI_D);
 
 
-	m_pInputComponent->RegisterAction("player", "moveleft", [this](int iActivatonMode, float fValue) 
-	{
-			vec2MovementDelta.x = -fValue; 
-	});
+	m_pInputComponent->RegisterAction("player", "moveleft", [this](int activatonMode, float value) {vec2MovementDelta.x = -value; });
 	m_pInputComponent->BindAction("player", "moveleft", eAID_KeyboardMouse, eKI_A);
 
 
 	//old
 	/*
-	m_pInputComponent->RegisterAction("player", "jump", [this](int iActivationMode, float fValue) 
+	m_pInputComponent->RegisterAction("player", "jump", [this](int iActivationMode, float value) 
 	{
-			vec2MovementDelta.z = fValue; 
+			vec2MovementDelta.z = value; 
 	});
 	m_pInputComponent->BindAction("player", "jump", eAID_KeyboardMouse, eKI_Space);
 
 
-	m_pInputComponent->RegisterAction("player", "crouch", [this](int iActivationMode, float fValue) 
+	m_pInputComponent->RegisterAction("player", "crouch", [this](int iActivationMode, float value) 
 	{
-		vec2MovementDelta.z = -fValue; 
+		vec2MovementDelta.z = -value; 
 	});
 	m_pInputComponent->BindAction("player", "crouch", eAID_KeyboardMouse, eKI_LShift);
 	*/
 
-	m_pInputComponent->RegisterAction("player", "yaw", [this](int iActivatonMode, float fValue) 
-	{
-			vec2MouseDeltaRotation.x = fValue; 
-	});
+	m_pInputComponent->RegisterAction("player", "yaw", [this](int activatonMode, float value) {vec2MouseDeltaRotation.x = value; });
 	m_pInputComponent->BindAction("player", "yaw", eAID_KeyboardMouse, eKI_MouseY);
 
 
-	m_pInputComponent->RegisterAction("player", "pitch", [this](int iActivatonMode, float fValue) 
-	{
-			vec2MouseDeltaRotation.y = -fValue; 
-	});
+	m_pInputComponent->RegisterAction("player", "pitch", [this](int iActivatonMode, float value) {vec2MouseDeltaRotation.y = -value; });
 	m_pInputComponent->BindAction("player", "pitch", eAID_KeyboardMouse, eKI_MouseX);
 
 
 
 
 	/*
-	m_pInputComponent->RegisterAction("player", "camswitch", [this](int iActivationMode, float fValue)
+	m_pInputComponent->RegisterAction("player", "camswitch", [this](int iActivationMode, float value)
 	{
 			if (iActivationMode == eIS_Pressed)
 			{
@@ -114,21 +95,44 @@ void CPlayerComponent::Playermovement()
 
 Cry::Entity::EventFlags CPlayerComponent::GetEventMask() const
 {
-	return Cry::Entity::EEvent::GameplayStarted | Cry::Entity::EEvent::Update | Cry::Entity::EEvent::Reset;
+	return Cry::Entity::EEvent::Update;
 }
 
 void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 {
 	switch (event.event)
 	{
+		/*
 		case Cry::Entity::EEvent::GameplayStarted:
 		{
 			Initialize();
+			InitializeInput();
 			break;
 		}
+		*/
 
 		case Cry::Entity::EEvent::Update:
 		{
+			//m_pEntity->SetPos(m_pEntity->GetWorldPos() + Vec3(vec2MovementDelta.x, vec2MovementDelta.y, 0.0f));
+			m_pCharacterController->SetVelocity(Vec3(vec2MovementDelta.x,vec2MovementDelta.y,0.0f));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			//下面是你跟著官方文字教學走會遇到BadCameraPos的原因,需要修正
+			/*
 			Ang3 rotationAngle = CCamera::CreateAnglesYPR(Matrix33(quatLookOrientation));
 			rotationAngle.x += vec2MouseDeltaRotation.x * fRotationSpeed;
 			rotationAngle.y = CLAMP(rotationAngle.y + vec2MouseDeltaRotation.y * fRotationSpeed, fRotationLimitsMinPitch, fRotationLimitsMaxPitch);
@@ -147,8 +151,8 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 			Matrix33 camRotation = CCamera::CreateOrientationYPR(pitchAngle);
 			finalCamMatrix.SetRotation33(camRotation);
 			m_pCameraComponent->SetTransformMatrix(finalCamMatrix);
-			break;
-		}
+			*/
+			}break;
 		case Cry::Entity::EEvent::Reset:
 		{
 			vec2MovementDelta = ZERO;

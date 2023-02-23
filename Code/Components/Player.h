@@ -16,7 +16,7 @@
 #include <DefaultComponents/Audio/ListenerComponent.h>
 
 
-
+/*
 namespace Cry::DefaultComponents
 {
 	class CCameraComponent;
@@ -24,7 +24,7 @@ namespace Cry::DefaultComponents
 	class CCharacterControllerComponent;
 	class CAdvancedAnimationComponent;
 }
-
+*/
 ////////////////////////////////////////////////////////
 // Represents a player participating in gameplay
 ////////////////////////////////////////////////////////
@@ -61,7 +61,6 @@ private:
 
 	float fMovementSpeed;
 	float fRotationSpeed;
-
 	float fRotationLimitsMinPitch;
 	float fRotationLimitsMaxPitch;
 
