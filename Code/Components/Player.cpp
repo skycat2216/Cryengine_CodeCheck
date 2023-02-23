@@ -53,35 +53,28 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 			PlayerMovement();
 			Ang3 rotationAng = CCamera::CreateAnglesYPR(Matrix33(quatLookOrientation));
 			rotationAng.x += vec2MouseDeltaRotation.x*fRotationSpeed;
-			rotationAng.y += vec2MouseDeltaRotation.y*fRotationSpeed;
+			rotationAng.y = CLAMP(rotationAng.y +  vec2MouseDeltaRotation.y * fRotationSpeed, fRotationLimitsMinPitch, fRotationLimitsMaxPitch);
 			rotationAng.z = 0;
 			quatLookOrientation = Quat(CCamera::CreateOrientationYPR(rotationAng));
-			m_pEntity->SetRotation(quatLookOrientation);
+			//m_pEntity->SetRotation(quatLookOrientation);
+			
 			
 
-
-
-			//下面是你跟著官方文字教學走會遇到BadCameraPos的原因,需要修正
-			/*
-			Ang3 rotationAngle = CCamera::CreateAnglesYPR(Matrix33(quatLookOrientation));
-			rotationAngle.x += vec2MouseDeltaRotation.x * fRotationSpeed;
-			rotationAngle.y = CLAMP(rotationAngle.y + vec2MouseDeltaRotation.y * fRotationSpeed, fRotationLimitsMinPitch, fRotationLimitsMaxPitch);
-			rotationAngle.z = 0;
-			quatLookOrientation = Quat(CCamera::CreateOrientationYPR(rotationAngle));
-				
 			Ang3 yawAngle = CCamera::CreateAnglesYPR(Matrix33(quatLookOrientation));
 			yawAngle.y = 0;
-			const Quat finalYaw = Quat(CCamera::CreateOrientationYPR(yawAngle));
+			const Quat finalYaw =Quat( CCamera::CreateOrientationYPR(yawAngle));
 			m_pEntity->SetRotation(finalYaw);
+
 
 			Ang3 pitchAngle = CCamera::CreateAnglesYPR(Matrix33(quatLookOrientation));
 			pitchAngle.x = 0;
-			Matrix34 finalCamMatrix; <---
-			finalCamMatrix.SetTranslation(m_pCameraComponent->GetTransformMatrix().GetTranslation());
+			Matrix34 finalCamMartix;
 			Matrix33 camRotation = CCamera::CreateOrientationYPR(pitchAngle);
-			finalCamMatrix.SetRotation33(camRotation);
-			m_pCameraComponent->SetTransformMatrix(finalCamMatrix);
-			*/
+			finalCamMartix.SetTranslation(m_pCameraComponent->GetTransformMatrix().GetTranslation());
+			finalCamMartix.SetRotation33(camRotation);
+			m_pCameraComponent->SetTransformMatrix(finalCamMartix);
+
+			
 		}break;
 		case Cry::Entity::EEvent::Reset:
 		{
@@ -90,7 +83,8 @@ void CPlayerComponent::ProcessEvent(const SEntityEvent& event)
 			quatLookOrientation = IDENTITY;
 
 			
-			
+			//I still can't believe it disappar after I hit ctrl+c and ctrl+v the vec3CameraPos in the code below.
+			//F
 			Matrix34 camDefaultMatrix;
 			camDefaultMatrix.SetTranslation(vec3CameraDefaultPos);
 			camDefaultMatrix.SetRotation33(Matrix33(m_pEntity->GetWorldRotation()));
