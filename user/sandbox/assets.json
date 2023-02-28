@@ -5811,7 +5811,7 @@
 			"type": "Level",
 			"guid": "984fcd77-e594-2b34-fbf5-414a47e0d684",
 			"name": "example",
-			"timestamp": 1677147759,
+			"timestamp": 1677601044,
 			"files": [ "Levels/example/example.level" ],
 			"workFiles": [ ],
 			"source": "",
@@ -5893,6 +5893,15 @@
 					"usageCount": 0
 				},
 				{ "path": "%engine%/engineassets/textures/white.dds", "usageCount": 0 },
+				{
+					"path": "animations/mannequin/adb/firstpersoncontrollerdefinition.xml",
+					"usageCount": 0
+				},
+				{
+					"path": "animations/mannequin/adb/playerfragmentids.xml",
+					"usageCount": 0
+				},
+				{ "path": "animations/mannequin/adb/playertags.xml", "usageCount": 0 },
 				{
 					"path": "animations/motusanims/ide2move/idle_to_jog_3p.caf",
 					"usageCount": 0
@@ -6105,6 +6114,10 @@
 				},
 				{ "path": "libs/environmentpresets/example.env", "usageCount": 1 },
 				{
+					"path": "objects/characters/samplecharacter/firstperson.cdf",
+					"usageCount": 0
+				},
+				{
 					"path": "objects/characters/samplecharacter/mcg_ddna.dds",
 					"usageCount": 0
 				},
@@ -6117,7 +6130,7 @@
 					"usageCount": 0
 				},
 				{
-					"path": "objects/characters/samplecharacter/motusbody.skin",
+					"path": "objects/characters/samplecharacter/motusbodyheadless.skin",
 					"usageCount": 0
 				},
 				{
@@ -6126,10 +6139,6 @@
 				},
 				{
 					"path": "objects/characters/samplecharacter/skelproxy.chr",
-					"usageCount": 0
-				},
-				{
-					"path": "objects/characters/samplecharacter/thirdperson.cdf",
 					"usageCount": 0
 				},
 				{

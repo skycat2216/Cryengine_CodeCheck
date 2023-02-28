@@ -106,6 +106,7 @@
       <WarningVersion>18</WarningVersion>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);DEBUG;_DEBUG;USE_PCH;CODE_BASE_FOLDER="D:/CryNet_library/crytek/cryengine-57-lts/5.7.1/Code/";_WINDOWS;WIN32;_WIN32;_WIN64;CRY_CVAR_OVERRIDE_FILE="E:/CryTPS/My Project2/solutions/win64/ProjectCVarOverrides.h";CRY_CVAR_WHITELIST_FILE="E:/CryTPS/My Project2/solutions/win64/ProjectCVarWhitelist.h";CRY_ENGINE_DEFINE_OVERRIDE_FILE="E:/CryTPS/My Project2/solutions/win64/ProjectEngineDefineOverrides.h";CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;USE_GEOM_CACHES=1;MEMREPLAY_USES_DETOURS=1;CMAKE_INTDIR="Debug";Game_EXPORTS</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);_DEBUG;DEBUG;USE_PCH;CODE_BASE_FOLDER=\"D:/CryNet_library/crytek/cryengine-57-lts/5.7.1/Code/\";_WINDOWS;WIN32;_WIN32;_WIN64;CRY_CVAR_OVERRIDE_FILE=\"E:/CryTPS/My Project2/solutions/win64/ProjectCVarOverrides.h\";CRY_CVAR_WHITELIST_FILE=\"E:/CryTPS/My Project2/solutions/win64/ProjectCVarWhitelist.h\";CRY_ENGINE_DEFINE_OVERRIDE_FILE=\"E:/CryTPS/My Project2/solutions/win64/ProjectEngineDefineOverrides.h\";CRYENGINE_DEFINE;UQS_SCHEMATYC_SUPPORT=0;USE_GEOM_CACHES=1;MEMREPLAY_USES_DETOURS=1;CMAKE_INTDIR=\"Debug\";Game_EXPORTS</PreprocessorDefinitions>
